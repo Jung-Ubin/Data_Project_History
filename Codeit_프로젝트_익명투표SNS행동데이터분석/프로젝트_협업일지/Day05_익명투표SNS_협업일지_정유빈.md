@@ -66,14 +66,14 @@
 
 - `grade=4`, `grade=20` 값은 오기입 혹은 테스트 데이터로 판단됨
 
-- 위에서도 확인했지만, 4, 20으로 기입된 데이터 수 한번 더 체크하기
+- 위에서도 확인했지만, 4, 20으로 기입된 데이터 수 한번 더 체크하기  
   ![1760665973236](<image/Day5_협업일지_정유빈/1760665973236.png>)
 
 ---
 
 ### **비정상 학년 상세 확인**
 
-- `accounts_school(학교 테이블)`의 정보를 끌고와서 `school_id`를 매칭하여 해당 유저 정보 확인
+- `accounts_school(학교 테이블)`의 정보를 끌고와서 `school_id`를 매칭하여 해당 유저 정보 확인  
   ![1760662815335](<image/Day5_협업일지_정유빈/1760662815335.png>)
 
 - 두 사례 모두 중학교(M) 로 확인됨 → **학년 데이터 입력 오류 가능성 높음**
@@ -106,17 +106,17 @@
 
 <br>
 
-- 매칭 실패된 `school_id` 정보
+- 매칭 실패된 `school_id` 정보  
   ![1760668014985](<image/Day5_협업일지_정유빈/1760668014985.png>)
 
 <br>
 
-- `accounts_group`에서 `school_id` 컬럼 값이 1인 데이터 수
+- `accounts_group`에서 `school_id` 컬럼 값이 1인 데이터 수  
   ![1760667934486](<image/Day5_협업일지_정유빈/1760667934486.png>)
 
 <br>
 
-- `school_type`이 NULL로 나온 데이터 수 : **26**
+- `school_type`이 NULL로 나온 데이터 수 : **26**  
   ![1760668181298](<image/Day5_협업일지_정유빈/1760668181298.png>)
 
 <br>
@@ -182,7 +182,7 @@
 | 인근 학교 수 10개 미만   | 0개     |
 
 <BR>
-- 임의의 school_id 찍어서 정보 확인 시
+- 임의의 school_id 찍어서 정보 확인 시  
 
 ![1760682045852](<image/Day5_협업일지_정유빈/1760682045852.png>)
 
@@ -233,7 +233,7 @@ GROUP BY school_id;
 
 <br>
 
-- 뷰 모습
+- 뷰 모습  
 
 ![1760682255118](<image/Day5_협업일지_정유빈/1760682255118.png>)
 
@@ -246,12 +246,12 @@ GROUP BY school_id;
 
 <br>
 
-- 학교 별로 뷰에 정보가 잘 들어갔는지 확인 시 5,950건 확인
+- 학교 별로 뷰에 정보가 잘 들어갔는지 확인 시 5,950건 확인  
   ![1760683678789](<image/Day5_협업일지_정유빈/1760683678789.png>)
 
 <br>
 
-- `accounts_nearbyschool` 테이블의 고유 학교 수 5,950건과 일치
+- `accounts_nearbyschool` 테이블의 고유 학교 수 5,950건과 일치  
   ![1760683769840](<image/Day5_협업일지_정유빈/1760683769840.png>)
 
 <br>
@@ -296,7 +296,7 @@ LEFT JOIN final.school_density_info AS sdi
     ON up.school_id = sdi.school_id;  -- school_id 기준으로 두 테이블 매칭
 ```
 
-- `dnesity(밀집도)` 매칭 결과
+- `dnesity(밀집도)` 매칭 결과  
   ![1760684719560](<image/Day5_협업일지_정유빈/1760684719560.png>)
 
 <br>
@@ -318,7 +318,7 @@ LEFT JOIN final.school_density_info AS sdi
   ON up.school_id = sdi.school_id;
 ```
 
-- 쿼리 결과
+- 쿼리 결과  
   ![1760684865593](<image/Day5_협업일지_정유빈/1760684865593.png>)
 
 <br>
@@ -340,7 +340,7 @@ LEFT JOIN final.school_density_info AS sdi
 WHERE sdi.school_id IS NULL;
 ```
 
-- 쿼리 결과
+- 쿼리 결과  
   ![1760684995668](<image/Day5_협업일지_정유빈/1760684995668.png>)
 
 <br>
@@ -373,7 +373,7 @@ SELECT COUNT(*) AS total_rows
 FROM final.event_user_nearbyschooldensity_info;
 ```
 
-- 쿼리 결과
+- 쿼리 결과  
   ![1760685394767](<image/Day5_협업일지_정유빈/1760685394767.png>)
 
 #### 6. `event_user_nearbyschooldensity_info` 뷰 내 `school_id` 고유 개수 확인
@@ -387,7 +387,7 @@ SELECT COUNT(DISTINCT school_id) AS school_id_count
 FROM final.event_user_nearbyschooldensity_info;
 ```
 
-- 쿼리 결과
+- 쿼리 결과  
   ![1760685640395](<image/Day5_협업일지_정유빈/1760685640395.png>)
 
 ---
@@ -428,4 +428,5 @@ WHERE sdi.density IS NOT NULL;        -- 밀집도 정보가 있는 경우만 �
 
 - 테이블을 분석하며, 유저들의 모집단을 어떻게 구성을 해야할지에 대한 아이디어를 팀원들과 회의를하며, 발굴해야할 것 같다.
 - 오늘 역시 진행된 테이블 수가 몇 개 존재하지 않아서, 분석 속도가 붙지 않음.. 테이블 분석 요령을 좀 더 필요할 것 같다.
+
 
