@@ -2,7 +2,7 @@
 SQL과 Python을 활용해 데이터분석 프로젝트를 진행하고,  
 진행한 내용을 정리 및 요약해놓은 레포지토리입니다.
 
-
+Python 및 부트캠프 공부 기록: https://github.com/newbierigu/Python_Study/tree/Study
 
 ## 🛠 사용 기술
 
